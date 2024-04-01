@@ -295,15 +295,14 @@
   <ItemGroup>
     <Content Include="DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DB.Context.cs</LastGenOutput>
       <DependentUpon>DB.edmx</DependentUpon>
+      <LastGenOutput>DB.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DB.edmx</DependentUpon>
       <LastGenOutput>DB.cs</LastGenOutput>
     </Content>
-    <Content Include="TextFile1.txt" />
     <None Include="Resources\gymm.jpg" />
     <None Include="Resources\gym4.jpg" />
     <None Include="Resources\gym3.jpg" />

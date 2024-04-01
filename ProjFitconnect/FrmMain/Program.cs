@@ -1,4 +1,5 @@
-﻿using Revised_V1._1;
+﻿using ProjGym;
+using Revised_V1._1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,7 @@ namespace FrmMain
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ProjGym.FrmMain());
-            Application.Run(new FrmFindCoach());
+            Application.Run(new ProjGym.FrmMain());
         }
     }
 }

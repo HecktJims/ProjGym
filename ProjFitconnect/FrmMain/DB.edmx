@@ -160,7 +160,7 @@
           <Key>
             <PropertyRef Name="rate_id" />
           </Key>
-          <Property Name="rate_id" Type="int" Nullable="false" />
+          <Property Name="rate_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="member_id" Type="int" Nullable="false" />
           <Property Name="class_schedule_id" Type="int" Nullable="false" />
           <Property Name="rate" Type="decimal" Precision="2" Scale="1" Nullable="false" />
@@ -761,7 +761,7 @@
           <Key>
             <PropertyRef Name="rate_id" />
           </Key>
-          <Property Name="rate_id" Type="Int32" Nullable="false" />
+          <Property Name="rate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="member_id" Type="Int32" Nullable="false" />
           <Property Name="class_schedule_id" Type="Int32" Nullable="false" />
           <Property Name="rate" Type="Decimal" Precision="2" Scale="1" Nullable="false" />
