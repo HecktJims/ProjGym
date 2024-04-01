@@ -37,6 +37,7 @@ namespace ProjGym
         {
             this.result = DialogResult.No;
             this.Close();
+
         }
     }
 }
