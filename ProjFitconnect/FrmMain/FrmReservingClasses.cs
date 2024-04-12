@@ -64,15 +64,15 @@ namespace FrmMain
                 foreach (var item in ReservingClasses)
                 {
                     ClassReservingBox rb = new ClassReservingBox();
-                    rb.Width = flowLayoutPanel1.Width * 3 / 4;
-                    rb.tc = item.classes;
-                    rb.i = item.identity;
-                    rb.ts = item.classSchedule;
-                    rb.td = item.time;
-                    rb.train = item.classes.tclass_sort_訓練;
-                    rb.reserveConfirm += this.confirm;
-                    if (flowLayoutPanel1.Controls.Equals(rb)) return;
-                    flowLayoutPanel1.Controls.Add(rb);
+                    //rb.Width = flowLayoutPanel1.Width * 3 / 4;
+                    //rb.tc = item.classes;
+                    //rb.i = item.identity;
+                    //rb.ts = item.classSchedule;
+                    //rb.td = item.time;
+                    //rb.train = item.classes.tclass_sort_訓練;
+                    //rb.reserveConfirm += this.confirm;
+                    //if (flowLayoutPanel1.Controls.Equals(rb)) return;
+                    //flowLayoutPanel1.Controls.Add(rb);
                 }
             }
             else
@@ -102,14 +102,14 @@ namespace FrmMain
             foreach (var item in ReservingClasses)
             {
                 ClassReservingBox rb = new ClassReservingBox();
-                rb.Width = flowLayoutPanel1.Width * 3 / 4;
-                rb.tc = item.classes;
-                rb.i = item.identity;
-                rb.ts = item.classSchedule;
-                rb.td = item.time; 
-                if (flowLayoutPanel1.Controls.Equals(rb)) return;
-                flowLayoutPanel1.Controls.Add(rb);
-                rb.reserveConfirm += this.confirm;
+                //rb.Width = flowLayoutPanel1.Width * 3 / 4;
+                //rb.tc = item.classes;
+                //rb.i = item.identity;
+                //rb.ts = item.classSchedule;
+                //rb.td = item.time; 
+                //if (flowLayoutPanel1.Controls.Equals(rb)) return;
+                //flowLayoutPanel1.Controls.Add(rb);
+                //rb.reserveConfirm += this.confirm;
             }
         }
 
@@ -137,13 +137,13 @@ namespace FrmMain
             foreach (var item in ReservingClasses)
             {
                 ClassReservingBox rb = new ClassReservingBox();
-                rb.Width = flowLayoutPanel1.Width * 3 / 4;
-                rb.tc = item.classes;
-                rb.i = item.identity;
-                rb.ts = item.classSchedule;
-                rb.td = item.time;
-                flowLayoutPanel1.Controls.Add(rb);
-                rb.reserveConfirm += this.confirm;
+                //rb.Width = flowLayoutPanel1.Width * 3 / 4;
+                //rb.tc = item.classes;
+                //rb.i = item.identity;
+                //rb.ts = item.classSchedule;
+                //rb.td = item.time;
+                //flowLayoutPanel1.Controls.Add(rb);
+                //rb.reserveConfirm += this.confirm;
             }
         }
 

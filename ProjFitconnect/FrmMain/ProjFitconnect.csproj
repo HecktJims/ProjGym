@@ -239,12 +239,6 @@
     <Compile Include="FrmOpenedClassCheck.designer.cs">
       <DependentUpon>FrmOpenedClassCheck.cs</DependentUpon>
     </Compile>
-    <Compile Include="tool\reservebox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="tool\reservebox.designer.cs">
-      <DependentUpon>reservebox.cs</DependentUpon>
-    </Compile>
     <Compile Include="tool\ReservedMemberCheck.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -411,9 +405,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOpenedClassCheck.resx">
       <DependentUpon>FrmOpenedClassCheck.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="tool\reservebox.resx">
-      <DependentUpon>reservebox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tool\ReservedMemberCheck.resx">
       <DependentUpon>ReservedMemberCheck.cs</DependentUpon>

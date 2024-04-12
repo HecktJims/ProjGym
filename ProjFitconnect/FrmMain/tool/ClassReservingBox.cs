@@ -10,51 +10,74 @@ using System.Windows.Forms;
 
 namespace FrmMain.tool
 {
-
-    public delegate void DConfirm(ClassReservingBox p);
     public partial class ClassReservingBox : UserControl
     {
-        public event DConfirm reserveConfirm;
-        private tclasses _tc;
-        private tclass_schedule _ts;
-        private tIdentity _i;
-        private ttimes_detail _td; 
-        public tclass_sort_訓練 train { get; set; }
-        public tclasses tc
-        {
-            get { return _tc; }
-            set
-            {
-                _tc = value;
-                lbClassName.Text = _tc.class_name;
-                if (!string.IsNullOrEmpty(_tc.class_photo))
-                {
-                    string path = Application.StartupPath + "\\ClassPic";
-                    pictureBox1.Image = new Bitmap(path + "\\" + _tc.class_photo);
-                }
-                lbDescription.Text = _tc.class_introduction;
-            }
-        }
-        public tIdentity i { get { return _i; } set { _i = value; lbCoachName.Text = _i.name; } }
-        public tclass_schedule ts
-        {
-            get { return _ts; }
-            set
-            {
-                _ts = value; lbDate.Text = _ts.course_date.ToShortDateString();
-                _ts = value; lbPrice.Text = "$ " + _ts.class_payment.ToString();
-            }
-        }
-        public ttimes_detail td { get { return _td; } set { _td = value; lbTime.Text = _td.time_name; } }
-         
         public ClassReservingBox()
         {
             InitializeComponent();
         }
+        private tIdentity _identity;
+        private string _classname;
+        private string _coachname;
+        private DateTime _date;
+        private string _time;
+        private double _price;
+        private string _desc;
+        private string _pic;
 
+        public tIdentity Identity
+        {
+            get { return this._identity; }
+            set { this._identity = value; }
+        }
+        public string classname
+        {
+            get { return _classname; }
+            set { _classname = value; }
+        }
+        public string coachname
+        {
+            get { return _coachname; }
+            set { _coachname = value; }
+        }
+        public DateTime date
+        {
+            get { return _date; }
+            set { _date = value; }
+        }
+        public string time
+        {
+            get { return _time; }
+            set { _time = value; }
+        }
+        public double price
+        {
+            get { return _price; }
+            set { _price = value; }
+        }
+        public string description
+        {
+            get { return _desc; }
+            set { _desc = value; }
+        }
+        public string picture
+        {
+            get { return _pic; }
+            set { _pic = value; }
+        }
+        public void showinfo()
+        {
+            this.lbClassName.Text = classname;
+            this.lbCoachName.Text = coachname;
+            this.lbDate.Text = date.ToString("M");
+            this.lbTime.Text = time;
+            this.lbPrice.Text = "NT " + $"{price:d2}" + " $";
+            this.lbDescription.Text = description;  //文字編輯
+            //this.pictureBox1                      //照片
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.reserveConfirm != null) this.reserveConfirm(this);
+
         }
     }
 }

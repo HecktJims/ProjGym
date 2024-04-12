@@ -12,52 +12,66 @@ using System.Windows.Forms;
 
 namespace mid_Coonect.Tools
 {
-    public delegate void DMore(CoachBox p);
     public partial class CoachBox : UserControl
     {
-        public tmember_follow followInfo { get; set; }
-        public event DMore learnMore;
-        public event DMore showmember;
-        private tclasses _cst;
-        private tcoach_info_id _cid;
-        private tIdentity _identity;
-        public tclasses cst { get { return _cst; } set {
-                _cst=value;
-                labelCourse.Text=_cst.class_name;
-            } }
-        public tcoach_info_id cid { get { return _cid; } set { 
-                _cid = value; 
-                labelCoachinfo.Text =_cid.coach_intro;
-            } }
-        public tIdentity Identity { get { return _identity; } set {
-                _identity = value;
-                labelCoachName.Text = _identity.name;
-                if (_identity.gender_id == 1) { labelGender.Text = "男性"; }
-                if (_identity.gender_id == 2) { labelGender.Text = "女性"; }
-                if (_identity.gender_id == 3) { labelGender.Text = "其他"; }
-                if (!string.IsNullOrEmpty(_identity.photo))
-                {
-                    string path = Application.StartupPath + "\\CoachImages";
-                    pictureBox1.Image = new Bitmap(path + "\\" + _identity.photo);
-                }
-            } }
-
         public CoachBox()
         {
             InitializeComponent();
-            this.button1.Visible = false;
+            this.btnCourse.Visible = false;
         }
-
+        public void loaddata()
+        {
+            this.labelCoachName.Text = coachname;
+            this.labelGender.Text = "性別： " + gender;
+            this.labelCourse.Text = course;
+            this.lbclassinfo.Text = classintro;
+            //picture
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.learnMore != null)
-                this.learnMore(this);
-        }
 
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (this.showmember != null)
-                this.showmember(this);
+
         }
+
+        private tIdentity _identity;
+        private string _name;
+        private string _sex;
+        private string _course;
+        private string _intro;
+        private string _pic;
+
+        public tIdentity Identity
+        {
+            get { return this._identity; }
+            set { this._identity = value; }
+        }
+        public string coachname
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        public string gender
+        {
+            get { return _sex; }
+            set { _sex = value; }
+        }
+        public string course
+        {
+            get { return _course; }
+            set { _course = value; }
+        }
+        public string classintro
+        {
+            get { return _intro; }
+            set { _intro = value; }
+        }
+        public string picture
+        {
+            get { return _pic; }
+            set { _pic = value; }
+        }   
     }
 }

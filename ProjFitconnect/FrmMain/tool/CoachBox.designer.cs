@@ -31,10 +31,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelCoachName = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
-            this.labelCoachinfo = new System.Windows.Forms.Label();
+            this.lbclassinfo = new System.Windows.Forms.Label();
             this.labelCourse = new System.Windows.Forms.Label();
-            this.button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInfo = new System.Windows.Forms.Button();
+            this.btnCourse = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,13 +75,13 @@
             // 
             // labelCoachinfo
             // 
-            this.labelCoachinfo.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelCoachinfo.Location = new System.Drawing.Point(268, 162);
-            this.labelCoachinfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelCoachinfo.Name = "labelCoachinfo";
-            this.labelCoachinfo.Size = new System.Drawing.Size(434, 52);
-            this.labelCoachinfo.TabIndex = 2;
-            this.labelCoachinfo.Text = "label2";
+            this.lbclassinfo.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbclassinfo.Location = new System.Drawing.Point(268, 162);
+            this.lbclassinfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbclassinfo.Name = "labelCoachinfo";
+            this.lbclassinfo.Size = new System.Drawing.Size(434, 52);
+            this.lbclassinfo.TabIndex = 2;
+            this.lbclassinfo.Text = "label2";
             // 
             // labelCourse
             // 
@@ -96,29 +96,27 @@
             // 
             // button
             // 
-            this.button.BackColor = System.Drawing.Color.Yellow;
-            this.button.Font = new System.Drawing.Font("微軟正黑體", 12.11215F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button.Location = new System.Drawing.Point(400, 68);
-            this.button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(117, 38);
-            this.button.TabIndex = 4;
-            this.button.Text = "詳細資訊";
-            this.button.UseVisualStyleBackColor = false;
-            this.button.Click += new System.EventHandler(this.button1_Click);
+            this.btnInfo.BackColor = System.Drawing.Color.Yellow;
+            this.btnInfo.Font = new System.Drawing.Font("微軟正黑體", 12.11215F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnInfo.Location = new System.Drawing.Point(400, 68);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInfo.Name = "button";
+            this.btnInfo.Size = new System.Drawing.Size(117, 38);
+            this.btnInfo.TabIndex = 4;
+            this.btnInfo.Text = "詳細資訊";
+            this.btnInfo.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Font = new System.Drawing.Font("微軟正黑體", 12.11215F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(540, 68);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "查看開課";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnCourse.BackColor = System.Drawing.Color.Lime;
+            this.btnCourse.Font = new System.Drawing.Font("微軟正黑體", 12.11215F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnCourse.Location = new System.Drawing.Point(540, 68);
+            this.btnCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCourse.Name = "button1";
+            this.btnCourse.Size = new System.Drawing.Size(117, 38);
+            this.btnCourse.TabIndex = 5;
+            this.btnCourse.Text = "查看開課";
+            this.btnCourse.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -146,10 +144,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button);
+            this.Controls.Add(this.btnCourse);
+            this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.labelCourse);
-            this.Controls.Add(this.labelCoachinfo);
+            this.Controls.Add(this.lbclassinfo);
             this.Controls.Add(this.labelGender);
             this.Controls.Add(this.labelCoachName);
             this.Controls.Add(this.pictureBox1);
@@ -167,10 +165,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelCoachName;
         private System.Windows.Forms.Label labelGender;
-        private System.Windows.Forms.Label labelCoachinfo;
+        private System.Windows.Forms.Label lbclassinfo;
         private System.Windows.Forms.Label labelCourse;
-        private System.Windows.Forms.Button button;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInfo;
+        private System.Windows.Forms.Button btnCourse;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

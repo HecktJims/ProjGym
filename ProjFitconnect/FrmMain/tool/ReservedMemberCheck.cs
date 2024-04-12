@@ -12,22 +12,75 @@ namespace FrmMain.tool
 {
     public partial class ReservedMemberCheck : UserControl
     {
-        private tclass_schedule _cs;
-        private tclasses _c;
-        private ttimes_detail _t;
-        private tfield _f;
-        public tclass_schedule cs { get { return _cs; }set { _cs = value; lbMAXcount.Text="(MAX)"+_cs.Max_student.ToString()+" 人";  lbDate.Text=_cs.course_date.ToLongDateString(); } }
-        public tclasses c { get { return _c; }set { _c = value; lbClassName.Text= _c.class_name; } }
-        public ttimes_detail t { get { return _t; }set { _t = value; lbTime.Text= _t.time_name; } }
-        public tfield f { get { return _f; }set { _f = value; lbFloor.Text = _f.floor;lbField.Text = _f.field_name; } }
-        public ReservedMemberCheck()
+        public void showinfo()
         {
-            InitializeComponent();
+            this.lbClassName.Text = classname;
+            this.lbFloor.Text = floor;
+            this.lbField.Text = field;
+            this.lbDate.Text = date.ToString("M");
+            this.lbTime.Text = $"{time1} ~ {time2}";
+            this.lbMemberCount.Text = classmember.ToString();
+            this.lbMAXcount.Text = "/ " + maxpeople;
         }
-        public string TextMemberCount 
+        private void button1_Click(object sender, EventArgs e)
         {
-            get { return lbMemberCount.Text; }
-            set { lbMemberCount.Text = value; }
+
+        }
+
+        private tIdentity _identity;
+        private string _name;
+        private int _person;
+        private int _max;
+        private string _floor;
+        private string _field;
+        private DateTime _date;
+        private string _time1;
+        private string _time2;
+
+        public tIdentity Identity
+        {
+            get { return this._identity; }
+            set { this._identity = value; }
+        }
+        public string classname
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        public int classmember
+        {
+            get { return _person; }
+            set { _person = value; }
+        }
+        public int maxpeople
+        {
+            get { return _max; }
+            set { _max = value; }
+        }
+        public string floor
+        {
+            get { return _floor; }
+            set { _floor = value; }
+        }
+        public string field
+        {
+            get { return _field; }
+            set { _field = value; }
+        }
+        public DateTime date
+        {
+            get { return _date; }
+            set { _date = value; }
+        }
+        public string time1
+        {
+            get { return _time1; }
+            set { _time1 = value; }
+        }
+        public string time2
+        {
+            get { return _time2; }
+            set { _time2 = value; }
         }
     }
 }
