@@ -43,7 +43,7 @@ namespace ProjGym
         {
             this.lbl_CourseName.Text = coursename;
             this.lbl_CourseIntro.Text = courseintro;
-            //  pic
+            this.pb_CoursePhoto.Image = new Bitmap(Application.StartupPath + "\\ClassPic\\" + coursephoto);
             //pb_CoursePhoto.Image = new Bitmap(Application.StartupPath + "\\ClassPic\\" + value);
         }
         public CourseBox()

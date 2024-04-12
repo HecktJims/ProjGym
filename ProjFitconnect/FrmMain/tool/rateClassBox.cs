@@ -12,27 +12,8 @@ using System.Windows.Forms;
 
 namespace FrmMain.tool
 {
-    public delegate void DRateClass(rateClassBox p);
-
     public partial class rateClassBox : UserControl
     {
-        public event DRateClass DRateClass;
-
-        private tIdentity _i;
-        private tmember_rate_class _rc;
-        private tclass_schedule _cs;
-        private tclasses _c;
-        private tclass_reserve _cr;
-
-        public tIdentity i { get { return _i; } set { _i = value; lblCoach.Text = _i.name; } }
-        public tmember_rate_class rc { get { return _rc; } set { _rc = value; txtrate.Text = _rc.rate.ToString(); txtFeedback.Text = _rc.describe; } }
-        public tclass_schedule cs { get { return _cs; } set { _cs = value; lblDate.Text = _cs.course_date.ToShortDateString(); } }
-        public tclasses c { get { return _c; } set { _c = value; lblClassName.Text = _c.class_name; } }
-
-        public tclass_reserve cr { get { return _cr; } set { _cr = value; } }
-
-        public TextBox FeedbackTextBox { get { return txtFeedback; } }
-        public TextBox rateTextBox { get { return txtrate; } }
         public rateClassBox()
         {
             InitializeComponent();
@@ -40,7 +21,45 @@ namespace FrmMain.tool
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (DRateClass != null) this.DRateClass(this);
+
+        }
+
+        private tIdentity _identity;
+        private string _name;
+        private DateTime _date;
+        private string _cname;
+        private double _rate;
+        private string _words;
+
+        public tIdentity identity
+        {
+            get { return _identity; }
+            set { _identity = value; }
+        }
+        public string classname
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        public DateTime date
+        {
+            get { return _date; }
+            set { _date = value; }
+        }
+        public string coachname
+        {
+            get { return _cname; }
+            set { _cname = value; }
+        }
+        public double rate
+        {
+            get { return _rate; }
+            set { _rate = value; }
+        }
+        public string classfeedback
+        {
+            get { return _words; }
+            set { _words = value; }
         }
     }
 }

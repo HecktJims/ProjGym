@@ -27,11 +27,12 @@ namespace mid_Coonect.Tools
             this.lbclassinfo.Text = classintro;
             //picture
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnInfo_Click(object sender, EventArgs e)
         {
 
         }
-        private void button1_Click_1(object sender, EventArgs e)
+
+        private void btnCourse_Click(object sender, EventArgs e)
         {
 
         }
@@ -72,6 +73,6 @@ namespace mid_Coonect.Tools
         {
             get { return _pic; }
             set { _pic = value; }
-        }   
+        }
     }
 }
