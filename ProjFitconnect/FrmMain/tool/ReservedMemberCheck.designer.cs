@@ -171,8 +171,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 30);
             this.button1.TabIndex = 21;
-            this.button1.Text = "查看開課";
+            this.button1.Text = "查看成員";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ReservedMemberCheck
             // 

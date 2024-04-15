@@ -24,7 +24,8 @@ namespace FrmMain.tool
             this.lbTime.Text = $"{time1} ~ {time2}";
             this.lbPrice.Text = "NT " + $"{price:d2}" + " $";
             this.lbDescription.Text = description;  //文字編輯
-            //this.pictureBox1                      //照片
+            //this.pictureBox1.Image = new System.Drawing.Image();
+            //this.pictureBox1.Image = new Bitmap(Application.StartupPath + "\\ClassPic\\" + picture);
         }
         private void button1_Click(object sender, EventArgs e)
         {

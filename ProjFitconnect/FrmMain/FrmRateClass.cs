@@ -14,7 +14,7 @@ namespace FrmMain
 {
     public partial class FrmRateClass : Form
     {
-        public tIdentity identity { get;set; }
+        public tIdentity member { get;set; }
         public FrmRateClass()
         {
             InitializeComponent();
@@ -27,9 +27,13 @@ namespace FrmMain
 
         private void LoadClasses()
         {
-
+            //using (gymEntities db = new gymEntities())
+            //{
+            //    var 
+            //}
             gymEntities db = new gymEntities();
-            int findID = this.identity.id;
+            /*
+            int findID = this.member.id;
             var rateClass = from c in db.tclasses
                             join s in db.tclass_schedule on c.class_id equals s.class_id
                             join rc in db.tmember_rate_class on s.class_schedule_id equals rc.class_schedule_id
@@ -39,6 +43,8 @@ namespace FrmMain
                             where rc.member_id == findID && cr.reserve_status == true
                             select new { classes = c, classSchedule = s ,classReserve = cr, identity = ri, memberRateClass = rc ,iidentity = ri };// new { classes = c, classSchedule = s, identity = i, memberRateClass = rc };
             //dataGridView1.DataSource = rateClass.ToList();
+            */
+
             if (rateClass.ToList().Count == 0) MessageBox.Show("喔喔~您還沒有預約課程，趕快去選課吧~~");
             foreach (var item in rateClass)
             {

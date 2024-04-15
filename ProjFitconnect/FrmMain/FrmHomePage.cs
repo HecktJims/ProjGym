@@ -276,7 +276,7 @@ namespace ProjGym
             this.splitContainer1.Panel2.Controls.Clear();
             FrmOpenedClassCheck f = new FrmOpenedClassCheck();
             f.MdiParent = this;
-            f.Identity = this.identity;
+            f.coach = this.identity;
             f.TopLevel = false;
             f.FormBorderStyle = FormBorderStyle.None;
             this.splitContainer1.Panel2.Controls.Add(f);
@@ -371,7 +371,7 @@ namespace ProjGym
             this.splitContainer1.Panel2.Controls.Clear();
             FrmRateClass f = new FrmRateClass();
             f.MdiParent = this;
-            f.identity = this.identity;
+            f.member = this.identity;
             f.TopLevel = false;
             f.FormBorderStyle = FormBorderStyle.None;
             this.splitContainer1.Panel2.Controls.Add(f);

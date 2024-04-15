@@ -17,11 +17,50 @@ namespace FrmMain.tool
         public rateClassBox()
         {
             InitializeComponent();
+            initinput();
         }
-
+        public void loaddata()
+        {
+            this.lblClassName.Text = classname;
+            this.lblDate.Text = date.ToString("M");
+            this.lblCoach.Text = coachname;
+            this.txtFeedback.Text = classfeedback;
+        }
         private void button3_Click(object sender, EventArgs e)
         {
+            //_isOK
+        }
+        public int ratevalue()
+        {
+            int score = this.cb.SelectedIndex + 1;
+            if (score == -1)
+            {
+                this.lblError.Visible = true;
+                return -1;
+            }
+            this.lblError.Visible = false;
+            rate = (double)score;
+            return score;
+        }
+        private void initinput()
+        {
+            this.lblError.Visible = false;
+            cb = new ComboBox
+            {
+                DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList,
+                FormattingEnabled = true,
+                Location = new System.Drawing.Point(134, 180),
+                Size = new System.Drawing.Size(94, 20),
+                TabIndex = 1,
+            };
+            this.txtFeedback.TabIndex = 2;
+            this.button3.TabIndex = 3;
 
+            for (int i = 1; i <= 10; i++)
+            {
+                cb.Items.Add(i.ToString());
+            }
+            cb.Text = "請下拉評分";
         }
 
         private tIdentity _identity;
@@ -30,6 +69,8 @@ namespace FrmMain.tool
         private string _cname;
         private double _rate;
         private string _words;
+        ComboBox cb;
+        private bool _isOK = false;
 
         public tIdentity identity
         {

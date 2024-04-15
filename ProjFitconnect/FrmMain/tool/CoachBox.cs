@@ -25,7 +25,8 @@ namespace mid_Coonect.Tools
             this.labelGender.Text = "性別： " + gender;
             this.labelCourse.Text = course;
             this.lbclassinfo.Text = classintro;
-            //picture
+            //this.pictureBox1.Image = new System.Drawing.Image();
+            //this.pb_CoursePhoto.Image = new Bitmap(Application.StartupPath + "\\ClassPic\\" + coursephoto);
         }
         private void btnInfo_Click(object sender, EventArgs e)
         {

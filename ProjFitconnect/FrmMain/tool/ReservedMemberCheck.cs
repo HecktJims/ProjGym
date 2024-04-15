@@ -12,6 +12,10 @@ namespace FrmMain.tool
 {
     public partial class ReservedMemberCheck : UserControl
     {
+        public ReservedMemberCheck()
+        {
+            InitializeComponent();
+        }
         public void showinfo()
         {
             this.lbClassName.Text = classname;

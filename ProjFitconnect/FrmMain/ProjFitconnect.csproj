@@ -314,10 +314,10 @@
     <Compile Include="Login\FrmLogin.designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\FrmNewAdminRegister.cs">
+    <Compile Include="role_admin\FrmNewAdminRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\FrmNewAdminRegister.designer.cs">
+    <Compile Include="role_admin\FrmNewAdminRegister.designer.cs">
       <DependentUpon>FrmNewAdminRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\FrmNewCoachRegister.cs">
@@ -439,7 +439,7 @@
     <EmbeddedResource Include="Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\FrmNewAdminRegister.resx">
+    <EmbeddedResource Include="role_admin\FrmNewAdminRegister.resx">
       <DependentUpon>FrmNewAdminRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FrmNewCoachRegister.resx">
@@ -503,6 +503,10 @@
       <DependentUpon>DB.edmx</DependentUpon>
       <LastGenOutput>DB.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="role_coach\" />
+    <Folder Include="role_member\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
