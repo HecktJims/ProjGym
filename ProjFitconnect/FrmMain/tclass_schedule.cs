@@ -18,7 +18,6 @@ namespace FrmMain
         public tclass_schedule()
         {
             this.tclass_reserve = new HashSet<tclass_reserve>();
-            this.tmember_rate_class = new HashSet<tmember_rate_class>();
         }
     
         public int class_schedule_id { get; set; }
@@ -26,7 +25,8 @@ namespace FrmMain
         public int coach_id { get; set; }
         public int field_id { get; set; }
         public System.DateTime course_date { get; set; }
-        public int course_time_id { get; set; }
+        public int course_time_id1 { get; set; }
+        public Nullable<int> course_time_id2 { get; set; }
         public int Max_student { get; set; }
         public int class_status_id { get; set; }
         public decimal class_payment { get; set; }
@@ -38,8 +38,6 @@ namespace FrmMain
         public virtual tclasses tclasses { get; set; }
         public virtual tfield tfield { get; set; }
         public virtual tIdentity tIdentity { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tmember_rate_class> tmember_rate_class { get; set; }
-        public virtual ttimes_detail ttimes_detail { get; set; }
+        public virtual ttime_detail ttime_detail { get; set; }
     }
 }

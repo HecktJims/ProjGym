@@ -26,6 +26,7 @@ namespace FrmMain
         }
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<tcity> tcity { get; set; }
         public virtual DbSet<tclass_limit_details> tclass_limit_details { get; set; }
         public virtual DbSet<tclass_reserve> tclass_reserve { get; set; }
         public virtual DbSet<tclass_schedule> tclass_schedule { get; set; }
@@ -35,15 +36,18 @@ namespace FrmMain
         public virtual DbSet<tclasses> tclasses { get; set; }
         public virtual DbSet<tcoach_expert> tcoach_expert { get; set; }
         public virtual DbSet<tcoach_info_id> tcoach_info_id { get; set; }
+        public virtual DbSet<tcoach_photo> tcoach_photo { get; set; }
         public virtual DbSet<tfield> tfield { get; set; }
         public virtual DbSet<tfield_reserve> tfield_reserve { get; set; }
         public virtual DbSet<tgender_Table> tgender_Table { get; set; }
+        public virtual DbSet<tGym> tGym { get; set; }
         public virtual DbSet<tIdentity> tIdentity { get; set; }
         public virtual DbSet<tidentity_role_detail> tidentity_role_detail { get; set; }
         public virtual DbSet<tmember_follow> tmember_follow { get; set; }
         public virtual DbSet<tmember_rate_class> tmember_rate_class { get; set; }
         public virtual DbSet<tmember_status_details> tmember_status_details { get; set; }
         public virtual DbSet<tregion_table> tregion_table { get; set; }
-        public virtual DbSet<ttimes_detail> ttimes_detail { get; set; }
+        public virtual DbSet<ttime_detail> ttime_detail { get; set; }
+        public virtual DbSet<region_info> region_info { get; set; }
     }
 }

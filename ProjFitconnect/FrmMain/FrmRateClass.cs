@@ -15,6 +15,7 @@ namespace FrmMain
     public partial class FrmRateClass : Form
     {
         public tIdentity member { get;set; }
+        private List<object> list = new List<object>();
         public FrmRateClass()
         {
             InitializeComponent();
@@ -27,70 +28,86 @@ namespace FrmMain
 
         private void LoadClasses()
         {
-            //using (gymEntities db = new gymEntities())
-            //{
-            //    var 
-            //}
-            gymEntities db = new gymEntities();
-            /*
-            int findID = this.member.id;
-            var rateClass = from c in db.tclasses
-                            join s in db.tclass_schedule on c.class_id equals s.class_id
-                            join rc in db.tmember_rate_class on s.class_schedule_id equals rc.class_schedule_id
-                            join cr in db.tclass_reserve on s.class_schedule_id equals cr.class_schedule_id
-                            join ri in db.tIdentity on cr.member_id equals ri.id
-                            join i in db.tIdentity on rc.class_schedule_id equals i.id
-                            where rc.member_id == findID && cr.reserve_status == true
-                            select new { classes = c, classSchedule = s ,classReserve = cr, identity = ri, memberRateClass = rc ,iidentity = ri };// new { classes = c, classSchedule = s, identity = i, memberRateClass = rc };
-            //dataGridView1.DataSource = rateClass.ToList();
-            */
-
-            if (rateClass.ToList().Count == 0) MessageBox.Show("喔喔~您還沒有預約課程，趕快去選課吧~~");
-            foreach (var item in rateClass)
+            using (gymEntities db = new gymEntities())
             {
+                var courses = from cr in db.tclass_reserve
+                              where cr.member_id == this.member.id
+                              where cr.reserve_status == true
+                              select cr;
 
-                rateClassBox rb = new rateClassBox();
+                if (courses.Count() == 0)
+                {
+                    MessageBox.Show("喔喔~您還沒有上過我們的課程，趕快去選課吧~~");
+                    //  TODO    rollback
+                    return;
+                }
 
-                rb.Width = flowLayoutPanel1.Width; // 2 ;
-                rb.Height = 400;
-                rb.c = item.classes; 
-                rb.i = item.identity;
-                rb.cs = item.classSchedule;
-                rb.rc = item.memberRateClass;
-                rb.cr = item.classReserve;
-                rb.i = item.iidentity;
-                rb.DRateClass += renewRate;
-                flowLayoutPanel1.Controls.Add(rb);
+                foreach (var item in courses)
+                {
+                    var c = from cs in db.tclass_schedule
+                            where cs.class_schedule_id == item.class_schedule_id
+                            select cs;
+
+                    ClassReservingBox crb = new ClassReservingBox
+                    {
+                        Size = new System.Drawing.Size(440, 150),
+                        tag = item.reserve_id,
+                        classname = db.tclasses.FirstOrDefault(x => x.class_id == item.tclass_schedule.class_id).class_name,
+                        coachname = db.tIdentity.FirstOrDefault(x => x.id == item.tclass_schedule.coach_id).name,
+                        date = db.tclass_schedule.FirstOrDefault(x => x.class_schedule_id == item.class_schedule_id).course_date,
+                        time1 = db.ttime_detail.FirstOrDefault(x => x.time_id == item.tclass_schedule.course_time_id1).time_name,
+                        time2 = db.ttime_detail.FirstOrDefault(x => x.time_id == item.tclass_schedule.course_time_id2).time_name,
+                        price = ((double)db.tclass_schedule.FirstOrDefault(x => x.class_schedule_id == item.class_schedule_id).class_payment),
+                        description = string.Empty,
+                    };
+                    list.Add(crb.classname);
+                    list.Add(crb.date);
+                    list.Add(crb.coachname);
+                    crb.Tag = list;
+                    list.Clear();
+                    crb.Click += Crb_Click;
+                    crb.showinfo();
+                    this.splitContainer2.Panel1.Controls.Add(crb);
+                }
             }
         }
 
-        private void renewRate(rateClassBox p)
+        private void Crb_Click(object sender, EventArgs e)
         {
             using (gymEntities db = new gymEntities())
             {
-                
-                tmember_rate_class rateclass = db.tmember_rate_class.FirstOrDefault(r => r.member_id == p.i.id && r.class_schedule_id == p.cs.class_schedule_id);
-                //將目前資料庫資料讀取出來
-                rateclass.rate = Convert.ToDecimal("" + p.rateTextBox.Text);
-                
-                if (rateclass.rate < 0 || rateclass.rate > 10)
+                var view = db.tmember_rate_class.FirstOrDefault(x => x.member_id == this.member.id && x.reserve_id == ((ClassReservingBox)sender).tag);
+                if (view != null)
                 {
-                    MessageBox.Show("請輸入0.0~10之間數值!");
-                    return;
+                    // set parent, jump etc.
+                    rateClassBox rcb = new rateClassBox
+                    {
+                        classname = ((ClassReservingBox)sender).classname,
+                        date = ((ClassReservingBox)sender).date,
+                        coachname = ((ClassReservingBox)sender).coachname,
+                        rate = ((double)view.rate),
+                        classfeedback = view.describe,
+                    };
+
+                    this.flowLayoutPanel1.Controls.Add(rcb);
                 }
                 else
                 {
-                    //複寫評價
-                    rateclass.describe = p.FeedbackTextBox.Text;
-                    db.SaveChanges();
-
-                    db.Entry(rateclass).Reload();
-
-                    MessageBox.Show("感謝您的評價!");
-                    this.flowLayoutPanel1.Controls.Clear();
-                    LoadClasses();
+                    rateClassBox rcb = new rateClassBox
+                    {
+                        classname = ((ClassReservingBox)sender).classname,
+                        date = ((ClassReservingBox)sender).date,
+                        coachname = ((ClassReservingBox)sender).coachname,
+                    };
+                    this.flowLayoutPanel1.Controls.Add(rcb);
                 }
             }
+        }
+
+        private void afterrate()
+        {
+            // to db
+            // show msg
         }
     }
 }

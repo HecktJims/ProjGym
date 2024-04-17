@@ -12,16 +12,12 @@ namespace FrmMain
     using System;
     using System.Collections.Generic;
     
-    public partial class tmember_rate_class
+    public partial class tcoach_photo
     {
-        public int rate_id { get; set; }
-        public Nullable<int> reserve_id { get; set; }
-        public int member_id { get; set; }
-        public int class_id { get; set; }
+        public int coach_photo_id { get; set; }
         public int coach_id { get; set; }
-        public decimal rate { get; set; }
-        public string describe { get; set; }
+        public string coach_photo { get; set; }
     
-        public virtual tclass_reserve tclass_reserve { get; set; }
+        public virtual tIdentity tIdentity { get; set; }
     }
 }

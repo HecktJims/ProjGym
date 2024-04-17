@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace FrmMain.tool
 {
+    //public delegate void trackdr();
     public partial class rateClassBox : UserControl
     {
         public rateClassBox()
@@ -26,10 +27,25 @@ namespace FrmMain.tool
             this.lblCoach.Text = coachname;
             this.txtFeedback.Text = classfeedback;
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // canceled
+            _isOK = DialogResult.Cancel;
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             //_isOK
+            _isOK = DialogResult.OK;
+            if (ratevalue() > 0)
+            {
+                this.rate = ratevalue();
+            }
+
         }
+        //public event trackdr btnclick;
+        //{
+
+        //}
         public int ratevalue()
         {
             int score = this.cb.SelectedIndex + 1;
@@ -70,7 +86,7 @@ namespace FrmMain.tool
         private double _rate;
         private string _words;
         ComboBox cb;
-        private bool _isOK = false;
+        private DialogResult _isOK;
 
         public tIdentity identity
         {

@@ -21,9 +21,9 @@ namespace FrmMain
             this.tclass_schedule = new HashSet<tclass_schedule>();
             this.tcoach_expert = new HashSet<tcoach_expert>();
             this.tcoach_info_id = new HashSet<tcoach_info_id>();
+            this.tcoach_photo = new HashSet<tcoach_photo>();
             this.tfield_reserve = new HashSet<tfield_reserve>();
             this.tmember_follow = new HashSet<tmember_follow>();
-            this.tmember_rate_class = new HashSet<tmember_rate_class>();
         }
     
         public int id { get; set; }
@@ -48,12 +48,12 @@ namespace FrmMain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tcoach_info_id> tcoach_info_id { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tcoach_photo> tcoach_photo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tfield_reserve> tfield_reserve { get; set; }
         public virtual tgender_Table tgender_Table { get; set; }
         public virtual tidentity_role_detail tidentity_role_detail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tmember_follow> tmember_follow { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tmember_rate_class> tmember_rate_class { get; set; }
     }
 }

@@ -41,6 +41,7 @@ namespace FrmMain.tool
         private double _price;
         private string _desc;
         private string _pic;
+        private int _tag;
 
         public tIdentity Identity
         {
@@ -86,6 +87,11 @@ namespace FrmMain.tool
         {
             get { return _pic; }
             set { _pic = value; }
+        }
+        public int tag
+        {
+            get { return _tag; }
+            set { _tag = value; }
         }
     }
 }

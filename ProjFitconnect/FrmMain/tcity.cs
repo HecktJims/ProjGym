@@ -12,18 +12,18 @@ namespace FrmMain
     using System;
     using System.Collections.Generic;
     
-    public partial class ttimes_detail
+    public partial class tcity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ttimes_detail()
+        public tcity()
         {
-            this.tclass_schedule = new HashSet<tclass_schedule>();
+            this.tregion_table = new HashSet<tregion_table>();
         }
     
-        public int time_id { get; set; }
-        public string time_name { get; set; }
+        public int city_id { get; set; }
+        public string city { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tclass_schedule> tclass_schedule { get; set; }
+        public virtual ICollection<tregion_table> tregion_table { get; set; }
     }
 }

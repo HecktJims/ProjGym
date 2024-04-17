@@ -28,7 +28,7 @@ namespace FrmMain
         public string class_introduction { get; set; }
         public int limited_gender { get; set; }
         public string class_photo { get; set; }
-        public int class_status { get; set; }
+        public bool class_status { get; set; }
     
         public virtual tclass_limit_details tclass_limit_details { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

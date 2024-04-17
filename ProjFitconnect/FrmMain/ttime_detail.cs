@@ -12,23 +12,18 @@ namespace FrmMain
     using System;
     using System.Collections.Generic;
     
-    public partial class tclass_reserve
+    public partial class ttime_detail
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tclass_reserve()
+        public ttime_detail()
         {
-            this.tmember_rate_class = new HashSet<tmember_rate_class>();
+            this.tclass_schedule = new HashSet<tclass_schedule>();
         }
     
-        public int reserve_id { get; set; }
-        public int class_schedule_id { get; set; }
-        public int member_id { get; set; }
-        public bool payment_status { get; set; }
-        public bool reserve_status { get; set; }
+        public int time_id { get; set; }
+        public string time_name { get; set; }
     
-        public virtual tclass_schedule tclass_schedule { get; set; }
-        public virtual tIdentity tIdentity { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tmember_rate_class> tmember_rate_class { get; set; }
+        public virtual ICollection<tclass_schedule> tclass_schedule { get; set; }
     }
 }

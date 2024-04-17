@@ -17,14 +17,15 @@ namespace FrmMain
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tregion_table()
         {
-            this.tfield = new HashSet<tfield>();
+            this.tGym = new HashSet<tGym>();
         }
     
         public int region_id { get; set; }
-        public string city { get; set; }
+        public int city_id { get; set; }
         public string region { get; set; }
     
+        public virtual tcity tcity { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tfield> tfield { get; set; }
+        public virtual ICollection<tGym> tGym { get; set; }
     }
 }

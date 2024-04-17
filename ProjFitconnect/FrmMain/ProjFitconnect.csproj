@@ -125,7 +125,13 @@
     <Compile Include="FrmReservingClasses.Designer.cs">
       <DependentUpon>FrmReservingClasses.cs</DependentUpon>
     </Compile>
+    <Compile Include="region_info.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagrams.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tcity.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="tclasses.cs">
@@ -155,6 +161,9 @@
     <Compile Include="tcoach_info_id.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="tcoach_photo.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="tfield.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
@@ -162,6 +171,9 @@
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="tgender_Table.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tGym.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="tIdentity.cs">
@@ -343,7 +355,7 @@
     <Compile Include="tregion_table.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ttimes_detail.cs">
+    <Compile Include="ttime_detail.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmAdmin_ClassUpdate.resx">
@@ -493,6 +505,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="role_coach\" />
+    <Folder Include="role_member\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DB.edmx</DependentUpon>
@@ -503,10 +519,6 @@
       <DependentUpon>DB.edmx</DependentUpon>
       <LastGenOutput>DB.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="role_coach\" />
-    <Folder Include="role_member\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
